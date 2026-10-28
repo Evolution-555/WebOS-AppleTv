@@ -1,0 +1,58 @@
+name: Build IPK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Build IPK
+        env:
+          CYTV_REPO: ${{ github.repository }}
+          CYTV_TAG: ${{ github.ref_name }}
+        run: |
+          python3 ipk/build.py
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ipk-files
+          path: dist/*
+          retention-days: 30
+
+      - name: Create Release on Tag
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" --target "$(git rev-parse HEAD)" --title "AppleTv Edition $TAG" --notes "## AppleTv Edition $TAG
+
+CleanYourTV with AppleTv theme as default.
+
+### Features
+- Authentic Apple TV design
+- Glassmorphism effects
+- Spring animations
+- 4K optimized (3840x2160)
+- Sound design integration
+- San Francisco typography
+
+### Installation
+Add this repository to Homebrew Channel:
+https://github.com/Evolution-555/WebOS-AppleTv/releases/latest/download/apps.json" \
+            dist/*.ipk dist/*.ipk.sha256 dist/*.tgz dist/*.tgz.sha256 dist/apps.json dist/*.manifest.json
