@@ -7,9 +7,9 @@
   "iconUri": "https://raw.githubusercontent.com/Evolution-555/WebOS-AppleTv/main/manager/app/largeIcon.png",
   "sourceUrl": "https://github.com/Evolution-555/WebOS-AppleTv",
   "rootRequired": true,
-  "ipkUrl": "https://github.com/Evolution-555/WebOS-AppleTv/releases/download/v1.4/com.cleanyourtv.manager_1.6.10_all.ipk",
+  "ipkUrl": "https://github.com/Evolution-555/WebOS-AppleTv/releases/download/main/com.cleanyourtv.manager_1.6.10_all.ipk",
   "ipkHash": {
-    "sha256": "ec69d78b2eb2e068032a056d55404f01441dde37475e2c9efdce6778a78db963"
+    "sha256": "22b516c7c33248e8207795a5a3d7f320d6fe03fc365d4b3a9ce0ccde75607a14"
   },
   "ipkSize": 3152136
 }
