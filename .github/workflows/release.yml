@@ -15,24 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update -qq
-          for p in libnss3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64 libpangocairo-1.0-0 libgtk-3-0t64 libxss1 libxtst6 fonts-liberation; do sudo apt-get install -y -qq $p >/dev/null 2>&1 || echo "not installed: $p"; done
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install dev dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Run checks
-        run: sh tools/check.sh --chromium || true
+          python-version: '3.x'
 
       - name: Build IPK
         env:
@@ -60,8 +47,5 @@ CleanYourTV with AppleTv theme as default.
 
 ### Installation
 Add this repository to Homebrew Channel:
-https://github.com/Evolution-555/WebOS-AppleTv/releases/latest/download/apps.json
-
-### Changes
-See commit history for full changelog." \
+https://github.com/Evolution-555/WebOS-AppleTv/releases/latest/download/apps.json" \
             dist/*.ipk dist/*.ipk.sha256 dist/*.tgz dist/*.tgz.sha256 dist/apps.json dist/*.manifest.json
