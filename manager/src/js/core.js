@@ -72,6 +72,13 @@ function launch(id, params) {
 function onoff(v) {
   return v ? 'On' : 'Off';
 }
+function applyDarkMode() {
+  if (st && st.darkMode === false) {
+    document.body.setAttribute('data-light-mode', 'true');
+  } else {
+    document.body.removeAttribute('data-light-mode');
+  }
+}
 function banner(text, cls) {
   var b = $('banner');
   b.textContent = tr(text || '');

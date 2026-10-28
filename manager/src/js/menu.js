@@ -626,6 +626,7 @@ function build() {
     return;
   }
   if (view === 'more') {
+    rows.push({ label: 'Home Assistant', sub: st.voice && st.voice.ha ? 'set up' : 'not set up', fn: openHa });
     rows.push({
       label: 'Voice',
       sub: st.voice ? (st.voice.installed ? onoff(st.voice.enabled) : 'not installed') : '',
@@ -653,6 +654,13 @@ function build() {
       })(),
       fn: function () {
         push('language');
+      },
+    });
+    rows.push({
+      label: 'Dark mode',
+      sub: onoff(st.darkMode !== false),
+      fn: function () {
+        opt({ darkMode: st.darkMode === false });
       },
     });
     rows.push({

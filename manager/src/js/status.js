@@ -16,6 +16,7 @@ function opt(o) {
   api('/api/manager/options', o).then(
     function (s) {
       st = s;
+      applyDarkMode();
       build();
       draw();
     },
@@ -29,6 +30,7 @@ function poll() {
   api('/api/manager/status').then(
     function (s) {
       st = s;
+      applyDarkMode();
       var j = s.job || {};
       if (j.state === 'working') {
         banner(j.message, 'work');
@@ -54,6 +56,7 @@ function load(keep) {
     function (s) {
       offline = false;
       st = s;
+      applyDarkMode();
       if (s.job && s.job.state === 'working') {
         poll();
         return;
