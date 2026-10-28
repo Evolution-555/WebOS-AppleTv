@@ -4,77 +4,77 @@
   {
    "id": "classic",
    "name": "Classic",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "The original look: near-black, white focus, ten columns.",
    "preview": "classic/preview.jpg"
   },
   {
    "id": "bloom",
    "name": "Bloom",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "A flower wallpaper with the dock in a glass panel at the bottom. Down moves the dock up and the apps appear below it, centred.",
    "preview": "bloom/preview.jpg"
   },
   {
    "id": "compact",
    "name": "Compact",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Twelve columns of smaller tiles: more apps on screen.",
    "preview": "compact/preview.jpg"
   },
   {
    "id": "horizon",
    "name": "Horizon",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "A row of seven square apps along the bottom of a dusk landscape, the clock on the left and the buttons on the right at the top. Down moves the row up and shows all apps below it.",
    "preview": "horizon/preview.jpg"
   },
   {
    "id": "large",
    "name": "Large print",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Eight columns of big tiles and bigger text, easier to read from the sofa.",
    "preview": "large/preview.jpg"
   },
   {
    "id": "lockscreen",
    "name": "Lock Screen",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "A phone-style lock screen: a greeting and big clock top-left, and a centred dock of rounded tiles on a glass panel. Turn Wallpapers on for your photos.",
    "preview": "lockscreen/preview.jpg"
   },
   {
    "id": "midnight",
    "name": "Midnight",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Deep blue with a soft wallpaper and a blue focus.",
    "preview": "midnight/preview.jpg"
   },
   {
    "id": "oled",
    "name": "OLED black",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Pure black, no ambient glow: unlit pixels stay off.",
    "preview": "oled/preview.jpg"
   },
   {
    "id": "pixel",
    "name": "Pixel",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Pixel art: a blocky typeface, square tiles and buttons, a yellow focus box and a sunset over a lake drawn in big pixels. Moves without animation, like an old console.",
    "preview": "pixel/preview.jpg"
   },
   {
    "id": "still",
    "name": "Still",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "No animation and a quiet glow, for anyone who prefers a calm screen.",
    "preview": "still/preview.jpg"
   },
   {
    "id": "warm",
    "name": "Warm",
-   "author": "CleanYourTV",
+   "author": "Apple My TV",
    "description": "Brown and amber with the glow in the accent colour.",
    "preview": "warm/preview.jpg"
   }

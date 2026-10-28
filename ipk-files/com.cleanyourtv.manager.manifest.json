@@ -1,0 +1,15 @@
+{
+  "id": "com.cleanyourtv.manager",
+  "version": "1.6.10",
+  "type": "web",
+  "title": "CleanYourTV",
+  "appDescription": "A clean Home screen for rooted LG TVs, without LG's ads and tracking",
+  "iconUri": "https://raw.githubusercontent.com/Evolution-555/WebOS-AppleTv/main/manager/app/largeIcon.png",
+  "sourceUrl": "https://github.com/Evolution-555/WebOS-AppleTv",
+  "rootRequired": true,
+  "ipkUrl": "https://github.com/Evolution-555/WebOS-AppleTv/releases/download/main/com.cleanyourtv.manager_1.6.10_all.ipk",
+  "ipkHash": {
+    "sha256": "ad55288a0642a2d4c9aedba61cc170ab6d42920b20c0e2bee4754a1dead74c6a"
+  },
+  "ipkSize": 3152152
+}
