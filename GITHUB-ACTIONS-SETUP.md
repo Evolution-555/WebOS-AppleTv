@@ -24,8 +24,9 @@ I've set up GitHub Actions to automatically build the IPK on Ubuntu runners, sol
 ## What Just Happened
 
 1. ✅ Created and pushed the GitHub Actions workflows
-2. ✅ Created and pushed tag `v1.0.0`
-3. 🔄 **Release workflow is now running** (triggered by the tag)
+2. ✅ Fixed workflow issues (removed unnecessary permissions)
+3. ✅ Created and pushed tag `v1.0.0`
+4. 🔄 **Release workflow is now running** (triggered by the tag)
 
 ## Check the Build Status
 
@@ -103,6 +104,7 @@ If you just want to build without creating a release:
 ## Current Status
 
 - ✅ Workflows set up
+- ✅ Workflows fixed (removed unnecessary permissions)
 - ✅ Tag v1.0.0 pushed
 - 🔄 Release workflow running (check Actions tab)
 - ⏳ Waiting for release to be created
