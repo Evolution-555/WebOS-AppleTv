@@ -1,126 +1,79 @@
 {
-  "id": "appletv",
   "name": "AppleTv",
-  "description": "Authentic Apple TV experience with glassmorphism, signature blue glow, spring animations, and haptic sound design. Optimized for 4K displays (3840x2160).",
   "author": "Evolution-555",
-  "version": "1.0.0",
-  "css": "appletv.css",
-  "preview": "appletv-preview.jpg",
-  "category": "modern",
-  "tags": ["4k", "apple", "glassmorphism", "dark", "premium"],
-  "settings": {
-    "resolution": {
-      "minWidth": 3840,
-      "minHeight": 2160,
-      "recommended": "4K"
-    },
-    "performance": {
-      "gpu": "moderate",
-      "notes": "Glass effects may impact performance on older webOS versions (5/6). Disable blur if lag occurs."
-    },
-    "accessibility": {
-      "textScale": true,
-      "highContrast": true,
-      "reducedMotion": false
-    }
+  "description": "Authentic Apple TV experience with glassmorphism, signature blue glow, spring animations. Optimized for 4K displays (3840x2160).",
+  "colors": {
+    "night": "#000000",
+    "panel": "#1c1c1e",
+    "ink": "#f5f5f7",
+    "accent": "#0a84ff",
+    "focus": "#0a84ff",
+    "pill": "#ffffff"
   },
-  "variables": {
-    "accent": {
-      "default": "#0a84ff",
-      "label": "Accent Color",
-      "type": "color",
-      "options": [
-        {"value": "#0a84ff", "label": "Blue (Default)"},
-        {"value": "#30d158", "label": "Green"},
-        {"value": "#bf5af2", "label": "Purple"},
-        {"value": "#ff9f0a", "label": "Orange"},
-        {"value": "#ff453a", "label": "Red"}
-      ]
-    },
-    "glassBlur": {
-      "default": 20,
-      "label": "Glass Blur (px)",
-      "type": "number",
-      "min": 0,
-      "max": 40,
-      "step": 5
-    },
-    "focusScale": {
-      "default": 1.08,
-      "label": "Focus Scale",
-      "type": "number",
-      "min": 1.0,
-      "max": 1.2,
-      "step": 0.02
-    },
-    "animationSpeed": {
-      "default": 1.0,
-      "label": "Animation Speed",
-      "type": "number",
-      "min": 0.5,
-      "max": 2.0,
-      "step": 0.1
-    },
-    "soundEnabled": {
-      "default": true,
-      "label": "Sound Effects",
-      "type": "boolean"
-    },
-    "hapticFeedback": {
-      "default": true,
-      "label": "Haptic Feedback",
-      "type": "boolean"
-    }
+  "surface": {
+    "pillAlpha": 0.15,
+    "pillRing": 0.2,
+    "pillRadius": 32,
+    "menuAlpha": 0.95,
+    "rowRadius": 30
   },
-  "presets": {
-    "performance": {
-      "name": "Performance Mode",
-      "description": "Disables glass effects for better performance",
-      "variables": {
-        "glassBlur": 0
-      }
-    },
-    "subtle": {
-      "name": "Subtle Focus",
-      "description": "Reduces focus scale for a more understated look",
-      "variables": {
-        "focusScale": 1.05
-      }
-    },
-    "fast": {
-      "name": "Fast Animations",
-      "description": "Speeds up all animations",
-      "variables": {
-        "animationSpeed": 0.7
-      }
-    }
+  "type": {
+    "font": "default",
+    "scale": 1
   },
-  "compatibility": {
-    "webOS": {
-      "min": "5.0",
-      "recommended": "7.0+",
-      "notes": "Backdrop-filter requires webOS 7+. Falls back to solid backgrounds on older versions."
-    },
-    "resolution": {
-      "required": "4K (3840x2160)",
-      "fallback": "Use original theme for 1080p displays"
-    }
+  "clock": {
+    "show": true,
+    "date": true,
+    "greeting": false,
+    "layout": "inline",
+    "anchor": "top",
+    "align": "left",
+    "x": 96,
+    "y": 54,
+    "scale": 1,
+    "dateScale": 1
   },
-  "changelog": [
-    {
-      "version": "1.0.0",
-      "date": "2025-01-28",
-      "changes": [
-        "Initial release as AppleTv",
-        "Authentic Apple TV design language",
-        "4K resolution support (3840x2160)",
-        "Glassmorphism with layered translucency",
-        "Apple spring animations (cubic-bezier)",
-        "San Francisco typography system",
-        "Sound design integration guide",
-        "Haptic feedback support",
-        "Premium focus states with blue glow"
-      ]
-    }
-  ]
+  "bar": {
+    "show": true,
+    "style": "pill",
+    "labels": "auto",
+    "anchor": "top",
+    "align": "right",
+    "x": 96,
+    "y": 54,
+    "size": 64,
+    "gap": 16
+  },
+  "shelf": {
+    "show": true,
+    "align": "left",
+    "x": 96,
+    "y": 150,
+    "scale": 1
+  },
+  "dock": {
+    "anchor": "bottom",
+    "align": "center",
+    "x": 0,
+    "y": 60,
+    "gap": 24,
+    "tileRadius": 56,
+    "tileFocusScale": 1.08
+  },
+  "grid": {
+    "columns": 10,
+    "gap": 24,
+    "tileRadius": 56,
+    "tileFocusScale": 1.08
+  },
+  "speed": {
+    "focus": 1,
+    "open": 1,
+    "scroll": 1
+  },
+  "glow": {
+    "opacity": 1,
+    "size": 40,
+    "blur": 20
+  }
 }
