@@ -44,6 +44,11 @@ const BUILTIN = () =>
     { name: 'Classic', author: 'CleanYourTV', description: 'The original look: near-black, white focus, ten columns.' },
     DEFAULT_ID
   );
+const APPLETV = () =>
+  normalize(
+    { name: 'AppleTv', author: 'Evolution-555', description: 'Authentic Apple TV experience with glassmorphism, signature blue glow, spring animations, and haptic sound design. Optimized for 4K displays (3840x2160).' },
+    'appletv'
+  );
 let cache = null;
 // the themes on the TV: Classic (built in) and every downloaded folder
 function load() {
@@ -59,7 +64,7 @@ function load() {
       raws[f] = JSON.parse(fs.readFileSync(path.join(dir(), f, 'theme.json'), 'utf8'));
     } catch (_) {}
   }
-  const out = { [DEFAULT_ID]: BUILTIN() };
+  const out = { [DEFAULT_ID]: BUILTIN(), appletv: APPLETV() };
   const build = (id, stack) => {
     // "extends": another theme's values are the starting point
     if (out[id]) return out[id];

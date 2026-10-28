@@ -2,6 +2,13 @@
  "v": 1,
  "themes": [
   {
+   "id": "appletv",
+   "name": "AppleTv",
+   "author": "Evolution-555",
+   "description": "Authentic Apple TV experience with glassmorphism, signature blue glow, spring animations, and haptic sound design. Optimized for 4K displays (3840x2160).",
+   "preview": "appletv/preview.jpg"
+  },
+  {
    "id": "classic",
    "name": "Classic",
    "author": "Apple My TV",

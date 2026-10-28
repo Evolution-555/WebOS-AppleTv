@@ -23,7 +23,7 @@ jobs:
       - name: Build IPK
         env:
           CYTV_REPO: ${{ github.repository }}
-          CYTV_TAG: ${{ github.ref_name }}
+          CYTV_TAG: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'v1.4' }}
         run: |
           python3 ipk/build.py
 
