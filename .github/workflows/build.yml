@@ -4,15 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Release tag (e.g., v1.0.0)'
-        required: false
-        type: string
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   build:
@@ -48,7 +42,7 @@ jobs:
       - name: Build IPK
         env:
           CYTV_REPO: ${{ github.repository }}
-          CYTV_TAG: ${{ github.event.inputs.tag || github.ref_name }}
+          CYTV_TAG: v1.0.0
         run: |
           python3 ipk/build.py
 
@@ -58,12 +52,3 @@ jobs:
           name: ipk-files
           path: dist/*
           retention-days: 30
-
-      - name: Create Release (if tag provided)
-        if: github.event.inputs.tag != ''
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.event.inputs.tag }}
-        run: |
-          gh release create "$TAG" --target "$(git rev-parse HEAD)" --title "$TAG" --notes "AppleTv Edition of CleanYourTV with AppleTv theme as default." \
-            dist/*.ipk dist/*.ipk.sha256 dist/*.tgz dist/*.tgz.sha256 dist/apps.json dist/*.manifest.json
