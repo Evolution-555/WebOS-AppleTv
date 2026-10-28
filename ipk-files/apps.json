@@ -8,24 +8,24 @@
   "packages": [
     {
       "id": "com.cleanyourtv.manager",
-      "title": "CleanYourTV",
+      "title": "Apple My TV",
       "iconUri": "https://raw.githubusercontent.com/Evolution-555/WebOS-AppleTv/main/manager/app/largeIcon.png",
-      "shortDescription": "A clean Home screen for rooted LG TVs, without LG's ads and tracking",
+      "shortDescription": "Apple My TV - A clean Home screen for rooted LG TVs, without LG's ads and tracking",
       "manifestUrl": "https://github.com/Evolution-555/WebOS-AppleTv/releases/download/main/com.cleanyourtv.manager.manifest.json",
       "manifest": {
         "id": "com.cleanyourtv.manager",
         "version": "1.6.10",
         "type": "web",
-        "title": "CleanYourTV",
-        "appDescription": "A clean Home screen for rooted LG TVs, without LG's ads and tracking",
+        "title": "Apple My TV",
+        "appDescription": "Apple My TV - A clean Home screen for rooted LG TVs, without LG's ads and tracking",
         "iconUri": "https://raw.githubusercontent.com/Evolution-555/WebOS-AppleTv/main/manager/app/largeIcon.png",
         "sourceUrl": "https://github.com/Evolution-555/WebOS-AppleTv",
         "rootRequired": true,
         "ipkUrl": "https://github.com/Evolution-555/WebOS-AppleTv/releases/download/main/com.cleanyourtv.manager_1.6.10_all.ipk",
         "ipkHash": {
-          "sha256": "ad55288a0642a2d4c9aedba61cc170ab6d42920b20c0e2bee4754a1dead74c6a"
+          "sha256": "d7ea26617cf3644f25475dec173d5197559969ab7128769bb9e638e86ee43487"
         },
-        "ipkSize": 3152152
+        "ipkSize": 3152034
       },
       "pool": "main",
       "fullDescriptionUrl": "https://raw.githubusercontent.com/Evolution-555/WebOS-AppleTv/main/docs/homebrew-channel.html"
