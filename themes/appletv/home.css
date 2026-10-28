@@ -1,0 +1,1167 @@
+/* AppleTv - Authentic Apple TV Experience for 4K (3840x2160)
+   Recreating Apple TV's signature design language:
+   - Deep, immersive black backgrounds
+   - Large squircle-shaped app icons with subtle shadows
+   - Prominent focus states with signature blue glow
+   - Authentic Apple spring animations (cubic-bezier)
+   - Glassmorphism with layered translucency
+   - San Francisco typography system
+   - Premium, content-focused layout
+   - Haptic sound design integration
+*/
+
+:root {
+  /* Apple TV Color Palette */
+  /* Backgrounds - deep, immersive dark */
+  --atv-bg-primary: #000000;
+  --atv-bg-secondary: #1c1c1e;
+  --atv-bg-tertiary: #2c2c2e;
+  --atv-bg-glass: rgba(28, 28, 30, 0.72);
+
+  /* Text colors */
+  --atv-text-primary: #ffffff;
+  --atv-text-secondary: rgba(255, 255, 255, 0.7);
+  --atv-text-tertiary: rgba(255, 255, 255, 0.5);
+
+  /* Accent colors (Apple TV blue) */
+  --atv-accent: #0a84ff;
+  --atv-accent-dark: #0066cc;
+  --atv-accent-light: #409cff;
+
+  /* Focus state - Apple TV signature glow */
+  --atv-focus-glow: rgba(10, 132, 255, 0.6);
+  --atv-focus-shadow: rgba(0, 0, 0, 0.4);
+  --atv-focus-scale: 1.08;
+
+  /* Glassmorphism */
+  --atv-glass-bg: rgba(30, 30, 30, 0.8);
+  --atv-glass-border: rgba(255, 255, 255, 0.1);
+  --atv-glass-blur: 20px;
+
+  /* Typography - San Francisco-inspired scale for 4K */
+  --atv-font-display: 180px; /* Large titles */
+  --atv-font-headline: 110px; /* App names, clock */
+  --atv-font-title: 80px; /* Section headers */
+  --atv-font-body: 52px; /* Body text */
+  --atv-font-caption: 44px; /* Secondary text */
+  --atv-font-small: 36px; /* Metadata */
+
+  /* Font weights */
+  --atv-weight-display: 700;
+  --atv-weight-headline: 600;
+  --atv-weight-title: 600;
+  --atv-weight-body: 500;
+  --atv-weight-caption: 400;
+  --atv-weight-small: 400;
+
+  /* Font family */
+  --atv-font: -apple-system, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* 4K Resolution scaling */
+  --atv-scale: 2; /* Everything scaled 2x from 1080p */
+
+  /* Spacing - generous for 4K */
+  --atv-spacing-xs: 16px;
+  --atv-spacing-sm: 32px;
+  --atv-spacing-md: 48px;
+  --atv-spacing-lg: 64px;
+  --atv-spacing-xl: 96px;
+  --atv-spacing-xxl: 128px;
+
+  /* Border radius - Apple TV squircle style */
+  --atv-radius-sm: 16px;
+  --atv-radius-md: 24px;
+  --atv-radius-lg: 32px;
+  --atv-radius-xl: 48px;
+  --atv-radius-app: 56px; /* App icon squircle */
+
+  /* Animation timing - Apple TV spring feel */
+  --atv-animation-fast: 0.2s;
+  --atv-animation-normal: 0.4s;
+  --atv-animation-slow: 0.6s;
+  --atv-spring: cubic-bezier(0.4, 0.0, 0.2, 1); /* Apple's standard spring */
+  --atv-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* For more bounce */
+
+  /* Dock sizing for 4K */
+  --atv-dock-width: 800px;
+  --atv-dock-height: 460px;
+  --atv-dock-gap: 64px;
+  --atv-dock-padding: 32px;
+
+  /* Grid sizing for 4K */
+  --atv-tile-width: 300px;
+  --atv-tile-height: 300px;
+  --atv-grid-gap-x: 48px;
+  --atv-grid-gap-y: 52px;
+  --atv-grid-columns: 12;
+
+  /* Top bar button sizing */
+  --atv-pill-height: 120px;
+  --atv-pill-radius: 60px;
+  --atv-pill-padding: 0 48px;
+
+  /* Legacy variable mappings for compatibility */
+  --ink: var(--atv-text-primary);
+  --ink2: var(--atv-text-secondary);
+  --night: var(--atv-bg-primary);
+  --night-rgb: 0, 0, 0;
+  --panel: var(--atv-bg-secondary);
+  --panel2: var(--atv-bg-tertiary);
+  --acc: var(--atv-accent);
+  --acc-ink: #ffffff;
+  --focus: var(--atv-accent);
+  --font: var(--atv-font);
+  --fs: var(--atv-scale);
+  --spd: 1;
+  --glow-op: 1;
+  --wall: none;
+  --pill-bg: var(--atv-glass-bg);
+  --pill-ring: var(--atv-glass-border);
+  --pill-r: var(--atv-pill-radius);
+  --pill-h: var(--atv-pill-height);
+  --bar-gap: var(--atv-spacing-md);
+  --menu-bg: rgba(0, 0, 0, 0.92);
+  --row-r: var(--atv-radius-lg);
+  --clock-l: var(--atv-spacing-xl);
+  --clock-r: auto;
+  --clock-t: var(--atv-spacing-lg);
+  --clock-b: auto;
+  --clock-tx: none;
+  --clock-ai: flex-start;
+  --clock-s: 1;
+  --date-s: 1;
+  --clock-d: flex;
+  --date-d: block;
+  --greet-d: none;
+  --bar-l: auto;
+  --bar-r: var(--atv-spacing-xl);
+  --bar-t: var(--atv-spacing-lg);
+  --bar-b: auto;
+  --bar-tx: none;
+  --bar-d: flex;
+  --name-d: block;
+  --name-x: var(--atv-spacing-xl);
+  --name-y: 300px;
+  --name-a: left;
+  --name-s: 1;
+  --view-top: 600px;
+  --dock-l: var(--atv-spacing-xl);
+  --dock-r: auto;
+  --dock-t: 120px;
+  --dock-b: auto;
+  --dock-tx: none;
+  --dock-w: var(--atv-dock-width);
+  --dock-h: var(--atv-dock-height);
+  --dock-gap: var(--atv-dock-gap);
+  --dock-rad: var(--atv-radius-xl);
+  --dock-panel: 0.15;
+  --dock-tile-alpha: 1;
+  --dock-tile-frost: 0;
+  --dock-frost-rgb: 255, 255, 255;
+  --dock-pad: var(--atv-dock-padding);
+  --dock-lift: -20px;
+  --dock-fs: var(--atv-focus-scale);
+  --cols: var(--atv-grid-columns);
+  --tile-w: var(--atv-tile-width);
+  --tile-h: var(--atv-tile-height);
+  --gap-x: var(--atv-grid-gap-x);
+  --gap-y: var(--atv-grid-gap-y);
+  --tile-r: var(--atv-radius-app);
+  --grid-l: var(--atv-spacing-xl);
+  --grid-w: 3456px;
+  --grid-t: 700px;
+  --grid-fs: var(--atv-focus-scale);
+  --ov-dim: 0.92;
+  --gloss: 0;
+  --tile-border: 0;
+  --ring-w: 6px;
+  --ring-off: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  width: 3840px;
+  height: 2160px;
+  overflow: hidden;
+  background: var(--atv-bg-primary);
+  color: var(--atv-text-primary);
+  font-family: var(--atv-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-image: var(--wall);
+  background-size: 3840px 2160px;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Apple TV-style glow effect - more subtle and diffuse */
+.glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3840px;
+  height: 1440px;
+  opacity: 0;
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+  will-change: opacity;
+  background: radial-gradient(ellipse 2800px 1280px at 26% -6%, rgba(var(--c), 0.3), transparent 70%);
+  filter: blur(40px);
+}
+
+.glow.on {
+  opacity: var(--glow-op);
+}
+
+/* Top section */
+#top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3840px;
+  height: 2160px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Clock with Apple TV typography */
+#clock {
+  position: absolute;
+  left: var(--clock-l);
+  right: var(--clock-r);
+  top: var(--clock-t);
+  bottom: var(--clock-b);
+  transform: var(--clock-tx);
+  display: var(--clock-d);
+  align-items: center;
+  height: 152px;
+}
+
+#greet {
+  display: none;
+  font-size: var(--atv-font-caption);
+  font-weight: var(--atv-weight-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--atv-text-secondary);
+  line-height: 1;
+}
+
+#time {
+  font-size: var(--atv-font-headline);
+  font-weight: var(--atv-weight-headline);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+#date {
+  display: var(--date-d);
+  font-size: var(--atv-font-title);
+  color: var(--atv-text-secondary);
+  margin-left: 44px;
+  padding-top: 28px;
+  font-weight: var(--atv-weight-body);
+}
+
+[data-clock="stack"] #clock {
+  flex-direction: column;
+  align-items: var(--clock-ai);
+  height: auto;
+}
+
+[data-clock="stack"] #greet {
+  display: var(--greet-d);
+  margin: 0 0 24px 12px;
+}
+
+[data-clock="stack"] #date {
+  margin: 16px 0 0 12px;
+  padding: 0;
+}
+
+/* Top bar with Apple TV glassmorphism */
+#bar {
+  pointer-events: auto;
+  position: absolute;
+  left: var(--bar-l);
+  right: var(--bar-r);
+  top: var(--bar-t);
+  bottom: var(--bar-b);
+  transform: var(--bar-tx);
+  display: var(--bar-d);
+  align-items: center;
+  height: calc(var(--pill-h) + 24px);
+}
+
+#bar > * + * {
+  margin-left: var(--bar-gap);
+}
+
+/* Apple TV-style pill buttons with glassmorphism */
+.pill {
+  display: flex;
+  align-items: center;
+  height: var(--pill-h);
+  padding: var(--atv-pill-padding);
+  border-radius: var(--pill-r);
+  font-size: var(--atv-font-body);
+  font-weight: var(--atv-weight-body);
+  background: var(--pill-bg);
+  backdrop-filter: blur(var(--atv-glass-blur));
+  -webkit-backdrop-filter: blur(var(--atv-glass-blur));
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--pill-ring);
+  transition: transform var(--atv-animation-fast) var(--atv-spring),
+              background-color var(--atv-animation-fast) linear,
+              box-shadow var(--atv-animation-fast) linear;
+  will-change: transform, background-color, box-shadow;
+}
+
+.pill > * + * {
+  margin-left: 28px;
+}
+
+.pill svg {
+  width: 60px;
+  height: 60px;
+  flex: none;
+}
+
+.pill span {
+  white-space: nowrap;
+  max-width: 600px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Primary action pill */
+.pill.primary {
+  background: var(--atv-accent);
+  color: #ffffff;
+  border-color: var(--atv-accent-dark);
+  box-shadow: 0 4px 24px rgba(10, 132, 255, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Focus state - Apple TV style with glow */
+.pill.f {
+  background: var(--atv-accent);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px var(--atv-focus-glow),
+              0 4px 16px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: var(--atv-accent-light);
+}
+
+/* Press state */
+.pill:active,
+.pill.press {
+  transform: scale(0.97) !important;
+  transition-duration: var(--atv-animation-fast);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-bar="round"] .pill {
+  width: var(--pill-h);
+  padding: 0;
+  justify-content: center;
+}
+
+[data-bar="flat"] .pill {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+[data-labels="hide"] .pill span {
+  display: none;
+}
+
+/* App name shelf */
+#shelf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--name-y);
+  height: 240px;
+  padding: 0 var(--name-x);
+  text-align: var(--name-a);
+  display: var(--name-d);
+  z-index: 5;
+}
+
+#name {
+  font-size: var(--atv-font-display);
+  font-weight: var(--atv-weight-display);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* View and scroll container */
+#view {
+  position: absolute;
+  left: 0;
+  top: var(--view-top);
+  width: 3840px;
+  height: calc(2160px - var(--view-top));
+  overflow: hidden;
+  z-index: 2;
+}
+
+#scroll {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3840px;
+  height: calc(2160px - var(--view-top));
+  transition: transform var(--atv-animation-normal) var(--atv-spring);
+  will-change: transform;
+}
+
+/* Dock with Apple TV glassmorphism */
+#dock {
+  position: absolute;
+  left: var(--dock-l);
+  right: var(--dock-r);
+  top: var(--dock-t);
+  bottom: var(--dock-b);
+  transform: var(--dock-tx);
+  display: flex;
+  z-index: 4;
+  padding: var(--dock-pad);
+  border-radius: calc(var(--dock-rad) + var(--dock-pad));
+  background: rgba(255, 255, 255, var(--dock-panel));
+  backdrop-filter: blur(var(--atv-glass-blur));
+  -webkit-backdrop-filter: blur(var(--atv-glass-blur));
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#dock > * + * {
+  margin-left: var(--dock-gap);
+}
+
+/* Grid */
+#grid {
+  position: absolute;
+  left: var(--grid-l);
+  top: var(--grid-t);
+  width: var(--grid-w);
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap-y) var(--gap-x);
+}
+
+/* Overlay grid */
+[data-grid="overlay"] #grid {
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+}
+
+[data-grid="overlay"].grid-open #grid {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-grid="overlay"] #scroll::before,
+[data-grid="push"] #scroll::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -3200px;
+  width: 3840px;
+  height: 8800px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(var(--night-rgb), var(--ov-dim));
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-grid="overlay"].grid-open #scroll::before,
+[data-grid="push"].grid-open #scroll::before {
+  opacity: 1;
+}
+
+/* Push grid */
+[data-grid="push"] #grid {
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+}
+
+[data-grid="push"].grid-open #grid {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-grid="push"] #shelf {
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+}
+
+[data-grid="push"].grid-open #shelf {
+  opacity: 0;
+}
+
+/* Center-aligned grid */
+[data-galign="center"] #grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+[data-galign="center"] #grid .tile {
+  width: var(--tile-w);
+}
+
+/* Tile gloss - more subtle for Apple TV look */
+.tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--gloss);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.15));
+}
+
+/* Base tile styles with Apple TV squircle */
+.tile {
+  --c: 74, 84, 112;
+  --b: 20, 22, 27;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, box-shadow;
+  background: rgb(var(--b));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform var(--atv-animation-normal) var(--atv-spring),
+              box-shadow var(--atv-animation-normal) var(--atv-spring);
+}
+
+.snap .tile,
+.snap .pill {
+  transition: none;
+}
+
+.tile.fill {
+  overflow: hidden;
+}
+
+.tile.fill img {
+  object-fit: fill;
+}
+
+/* Press state */
+.tile.press {
+  transform: scale(0.95) !important;
+  transition-duration: var(--atv-animation-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tile.launching {
+  opacity: 0.82;
+}
+
+.tile.disintegrate-prep {
+  transform: scale(0.92) !important;
+  transition: transform var(--atv-animation-fast) ease-out !important;
+}
+
+.tile.disintegrate {
+  pointer-events: none !important;
+  will-change: transform, opacity;
+  transition:
+    transform var(--atv-animation-slow) cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity var(--atv-animation-slow) ease-out !important;
+  transform: scale(0.15) !important;
+  opacity: 0 !important;
+}
+
+.disintegrate-box {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: visible;
+}
+
+.disintegrate-p {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 1;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    transform var(--atv-animation-slow) cubic-bezier(0.1, 0.85, 0.25, 1),
+    opacity var(--atv-animation-slow) ease-out;
+}
+
+.tile img {
+  object-fit: contain;
+}
+
+.tile svg {
+  fill: none;
+  stroke: var(--atv-text-primary);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+}
+
+.tile .t {
+  font-size: var(--atv-font-body);
+  font-weight: var(--atv-weight-body);
+  padding: 24px;
+  text-align: center;
+  line-height: 1.15;
+  opacity: 0.9;
+}
+
+/* Apple TV-style focus state with prominent glow */
+.tile.f {
+  z-index: 3;
+  transform: scale(var(--grid-fs));
+  box-shadow: 0 16px 48px var(--atv-focus-glow),
+              0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.tile.f::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  left: calc(-1 * (var(--ring-off) + var(--ring-w)));
+  top: calc(-1 * (var(--ring-off) + var(--ring-w)));
+  right: calc(-1 * (var(--ring-off) + var(--ring-w)));
+  bottom: calc(-1 * (var(--ring-off) + var(--ring-w)));
+  border: var(--ring-w) solid var(--atv-accent);
+  border-radius: calc(var(--tile-r) + var(--ring-off) + var(--ring-w));
+  box-shadow: 0 0 32px var(--atv-focus-glow);
+}
+
+#dock .tile.f::before {
+  border-radius: calc(var(--dock-rad) + var(--ring-off) + var(--ring-w));
+}
+
+.tile.fill.f::before {
+  display: none;
+}
+
+.tile.fill.f {
+  box-shadow:
+    0 0 0 var(--ring-w) var(--atv-accent),
+    0 16px 48px var(--atv-focus-glow),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Dock tiles */
+#dock .tile {
+  width: var(--dock-w);
+  height: var(--dock-h);
+  border-radius: var(--dock-rad);
+  background: rgba(var(--b), var(--dock-tile-alpha));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+#dock .tile:not(.f)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(var(--dock-frost-rgb), var(--dock-tile-frost));
+}
+
+#dock .tile img {
+  height: 56%;
+  max-width: 46%;
+}
+
+#dock .tile svg {
+  width: 192px;
+  height: 192px;
+}
+
+#dock .tile.f {
+  transform: translateY(var(--dock-lift)) scale(var(--dock-fs));
+  box-shadow: 0 20px 60px var(--atv-focus-glow),
+              0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid tiles */
+#grid .tile {
+  height: var(--tile-h);
+  border-radius: var(--tile-r);
+}
+
+#grid .tile img {
+  width: 64%;
+  height: 64%;
+}
+
+#grid .tile svg {
+  width: 128px;
+  height: 128px;
+}
+
+#grid .tile.f {
+  transform: scale(var(--grid-fs));
+}
+
+#grid .tile.sys {
+  flex-direction: column;
+}
+
+#grid .tile.sys > * + * {
+  margin-top: 16px;
+}
+
+.slab {
+  font-size: var(--atv-font-caption);
+  font-weight: var(--atv-weight-body);
+  color: var(--atv-text-secondary);
+}
+
+#grid .tile.sys {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Running app indicator */
+.tile .rd {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  top: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: #30d158;
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+#dock .tile .rd {
+  right: 40px;
+  top: 40px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+/* Input tiles */
+.tile.inp {
+  flex-direction: column;
+}
+
+.tile.inp > * + * {
+  margin-top: 12px;
+}
+
+.tile.inp .slab {
+  color: var(--atv-text-primary);
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tile.inp .slab.sub {
+  font-size: var(--atv-font-small);
+  color: var(--atv-text-secondary);
+}
+
+.tile.inp .slab:empty {
+  display: none;
+}
+
+.tile.inp.off {
+  opacity: 0.55;
+}
+
+#dock .tile.inp svg {
+  width: calc(var(--dock-h) * 0.3);
+  height: calc(var(--dock-h) * 0.3);
+}
+
+#dock .tile.inp .slab {
+  font-size: calc(var(--dock-h) * 0.11);
+}
+
+#dock .tile.inp .slab.sub {
+  font-size: calc(var(--dock-h) * 0.085);
+}
+
+/* Toast notification with Apple TV glassmorphism */
+#toast {
+  position: absolute;
+  bottom: 128px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  padding: 36px 76px;
+  border-radius: 68px;
+  font-size: var(--atv-font-body);
+  max-width: 3000px;
+  width: max-content;
+  text-align: center;
+  background: var(--atv-glass-bg);
+  backdrop-filter: blur(var(--atv-glass-blur));
+  -webkit-backdrop-filter: blur(var(--atv-glass-blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#toast.on {
+  opacity: 1;
+}
+
+/* Wallpaper layers */
+.wp,
+.wpd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3840px;
+  height: 2160px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wp {
+  background-size: cover;
+  background-position: center;
+  transition: opacity calc(2.4s * var(--spd)) linear;
+}
+
+.wp.on,
+.wpon .wpd {
+  opacity: 1;
+}
+
+body.wpon {
+  background-image: none;
+}
+
+/* Cards */
+#cards {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3840px;
+  height: 2160px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.card {
+  position: absolute;
+  left: var(--cl);
+  right: var(--cr);
+  top: var(--ct);
+  bottom: var(--cb);
+  transform: var(--ctx);
+  overflow: hidden;
+  transition: opacity var(--atv-animation-normal) var(--atv-spring);
+}
+
+.card[data-align="left"] {
+  text-align: start;
+}
+
+.card[data-align="center"] {
+  text-align: center;
+}
+
+.card[data-align="right"] {
+  text-align: end;
+}
+
+.grid-open .card:not(.keep) {
+  opacity: 0;
+}
+
+/* Greeting card */
+.card-greeting {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--atv-font-caption);
+  color: var(--atv-text-secondary);
+  line-height: 1.2;
+}
+
+.card-greeting .l1,
+.card-greeting .l2 {
+  flex: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-greeting .l1 {
+  font-weight: var(--atv-weight-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-greeting .l2 {
+  margin-top: 12px;
+  font-size: 1.25em;
+}
+
+/* Text card */
+.card-template {
+  color: var(--atv-text-primary);
+  font-size: var(--atv-font-body);
+  line-height: 1.3;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-template[data-size="small"] {
+  font-size: var(--atv-font-caption);
+}
+
+.card-template[data-size="large"] {
+  font-size: var(--atv-font-title);
+}
+
+.card-template .hd {
+  font-size: 1.6em;
+  font-weight: var(--atv-weight-display);
+  line-height: 1.15;
+}
+
+/* Weather card */
+.card-weather {
+  color: var(--atv-text-primary);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.wx-now {
+  display: flex;
+  align-items: center;
+}
+
+[data-align="right"] .wx-now {
+  justify-content: flex-end;
+}
+
+[data-align="center"] .wx-now {
+  justify-content: center;
+}
+
+.wx-i svg {
+  display: block;
+  width: calc(128px * var(--atv-scale));
+  height: calc(128px * var(--atv-scale));
+  margin: 0 32px 0 0;
+}
+
+.wx-t {
+  font-size: var(--atv-font-headline);
+  font-weight: var(--atv-weight-headline);
+  line-height: 1;
+}
+
+.wx-p,
+.wx-none {
+  margin-top: 12px;
+  font-size: var(--atv-font-caption);
+  color: var(--atv-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wx-days {
+  display: flex;
+  margin-top: 32px;
+  font-size: var(--atv-font-caption);
+}
+
+[data-align="right"] .wx-days {
+  justify-content: flex-end;
+}
+
+.wx-days > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 192px;
+}
+
+.wx-days > div + div {
+  margin-left: 36px;
+}
+
+.wx-days svg {
+  width: 68px;
+  height: 68px;
+  margin: 12px 0;
+}
+
+.wx-days small {
+  color: var(--atv-text-secondary);
+  font-size: 1em;
+}
+
+/* Home Assistant entity list */
+.card-ha-entities {
+  height: auto !important;
+  max-height: var(--ch);
+  text-align: start !important;
+}
+
+/* Home Assistant cards with glassmorphism */
+.card-ha-entity,
+.card-ha-entities {
+  padding: 32px 48px;
+  border-radius: calc(var(--tile-r) * 1.2);
+  background: var(--atv-glass-bg);
+  backdrop-filter: blur(var(--atv-glass-blur));
+  -webkit-backdrop-filter: blur(var(--atv-glass-blur));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--atv-text-primary);
+}
+
+.card-ha-entity {
+  display: flex;
+  align-items: center;
+  transition:
+    transform var(--atv-animation-fast) ease-out,
+    background-color var(--atv-animation-fast) linear;
+}
+
+.card-ha-entity.on .ha-i {
+  color: var(--atv-accent);
+}
+
+.card-ha-entity.f {
+  background: var(--atv-accent);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px var(--atv-focus-glow),
+              0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-ha-entity.f .ha-i,
+.card-ha-entity.f .ha-n {
+  color: inherit;
+}
+
+.ha-i svg {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-right: 40px;
+}
+
+.ha-tx {
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+}
+
+.ha-s {
+  font-size: var(--atv-font-headline);
+  font-weight: var(--atv-weight-headline);
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ha-n {
+  margin-top: 8px;
+  font-size: var(--atv-font-caption);
+  color: var(--atv-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ha-title {
+  font-size: var(--atv-font-body);
+  font-weight: var(--atv-weight-display);
+  margin-bottom: 16px;
+}
+
+.ha-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  font-size: var(--atv-font-body);
+}
+
+.ha-row + .ha-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ha-ri svg {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-right: 28px;
+  color: var(--atv-text-secondary);
+}
+
+.ha-rn {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ha-rs {
+  margin-left: 32px;
+  font-weight: var(--atv-weight-body);
+  white-space: nowrap;
+}
+
+.card-ha-camera {
+  border-radius: calc(var(--tile-r) * 1.2);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-ha-camera img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

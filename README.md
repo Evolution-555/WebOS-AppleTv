@@ -1,13 +1,57 @@
 <p align="center">
-  <a href="https://github.com/lasharor/cleanyourtv-WebOS/stargazers"><img src="https://img.shields.io/github/stars/lasharor/cleanyourtv-WebOS?style=flat&cacheSeconds=1800&color=ffc857&labelColor=101218" alt="Stars"></a>
-  <a href="https://github.com/lasharor/cleanyourtv-WebOS/pulls?q=is%3Amerged"><img src="https://img.shields.io/github/issues-search?query=repo%3Alasharor%2Fcleanyourtv-WebOS%20is%3Apr%20is%3Amerged&style=flat&cacheSeconds=1800&color=7c6cff&labelColor=101218&label=merged%20PRs" alt="Merged PRs"></a>
-  <a href="https://github.com/lasharor/cleanyourtv-WebOS/network/members"><img src="https://img.shields.io/github/forks/lasharor/cleanyourtv-WebOS?style=flat&cacheSeconds=1800&color=2fd3c0&labelColor=101218" alt="Forks"></a>
-  <a href="https://discord.gg/9hHAmCfqB"><img src="https://img.shields.io/badge/Discord-join-f5f6f8?style=flat&logo=discord&logoColor=white&labelColor=101218" alt="Discord"></a>
+  <a href="https://github.com/Evolution-555/appletv-cleanyourtv/stargazers"><img src="https://img.shields.io/github/stars/Evolution-555/appletv-cleanyourtv?style=flat&cacheSeconds=1800&color=ffc857&labelColor=101218" alt="Stars"></a>
+  <a href="https://github.com/Evolution-555/appletv-cleanyourtv/network/members"><img src="https://img.shields.io/github/forks/Evolution-555/appletv-cleanyourtv?style=flat&cacheSeconds=1800&color=2fd3c0&labelColor=101218" alt="Forks"></a>
 </p>
 
 <p align="center"><img src="assets/icon.svg" width="128" alt="CleanYourTV icon"></p>
 
-# CleanYourTV for LG webOS
+# CleanYourTV for LG webOS - AppleTv Edition
+
+**A fork of CleanYourTV with the AppleTv theme as the default.**
+
+This is a modified version of [CleanYourTV](https://github.com/lasharor/cleanyourtv-WebOS) that comes pre-configured with the **AppleTv theme** - an authentic Apple TV-inspired design with glassmorphism, signature blue glow, spring animations, and sound design, optimized for 4K displays.
+
+> [!NOTE]
+> **This is a fork of the original CleanYourTV project.** All features from the original CleanYourTV are included, with the AppleTv theme set as the default. For the original project, visit [lasharor/cleanyourtv-WebOS](https://github.com/lasharor/cleanyourtv-WebOS).
+
+## What's Different
+
+- **Default Theme**: AppleTv (authentic Apple TV experience for 4K)
+- **Glassmorphism Effects**: Translucent panels with blur
+- **Apple TV Blue Accent**: Signature #0a84ff glow
+- **Spring Animations**: Apple's cubic-bezier timing functions
+- **San Francisco Typography**: Apple's type system scale
+- **Sound Design**: Premium audio feedback system (optional)
+- **4K Optimized**: Designed for 3840x2160 displays
+
+All other CleanYourTV features remain unchanged:
+- Live TV from your own playlist
+- Inputs list on the Input key
+- Picture notifications
+- Optional on-device voice recognition
+- Optional debloat of LG's ads and telemetry
+- All other themes still available
+
+---
+
+## Quick Start
+
+1. Root the TV and install the [Homebrew Channel](https://webosbrew.org).
+2. Install from the Homebrew Channel by adding this repository:
+
+   ```text
+   https://github.com/Evolution-555/appletv-cleanyourtv/releases/latest/download/apps.json
+   ```
+
+   **CleanYourTV AppleTv Edition** then shows in the channel's list: open it and choose **Install**.
+
+3. On the TV, open **CleanYourTV**, choose the options and **Set up now**. It takes about a minute and the screen blinks once.
+
+That's it! The launcher with the AppleTv theme is now your Home. You can change themes in the manager app if you prefer a different look.
+
+---
+
+## Original CleanYourTV Description
 
 A fast home screen for rooted LG webOS TVs, with Live TV from your own playlist, an Inputs list on the Input key,
 picture notifications, optional on-device voice recognition and an optional debloat of LG's ads and telemetry.

@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "id": "com.evolution555.cleanyourtv",
+      "title": "CleanYourTV AppleTv",
+      "version": "1.0.0",
+      "icon": "https://github.com/Evolution-555/appletv-cleanyourtv/raw/main/assets/icon.svg",
+      "type": "web",
+      "main": "https://github.com/Evolution-555/appletv-cleanyourtv/releases/latest/download/com.evolution555.cleanyourtv.ipk",
+      "requiredMemory": 256
+    }
+  ]
+}
